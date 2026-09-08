@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Password Strength Analyzer</h2>
+    <p class="subtitle">Evaluate security, detect weak patterns, and generate stronger passwords.</p>
+
+    <!-- Input Section -->
+    <div class="input-group">
+      <input type="password" id="passwordInput" placeholder="Enter your password..." autocomplete="off">
+      <button type="button" id="toggleVisibility">Show</button>
+    </div>
+
+    <!-- Strength Meter -->
+    <div class="meter-container">
+      <div id="meterBar" class="meter-bar"></div>
+    </div>
+    <div class="strength-label">
+      <span>Strength: <strong id="strengthText">None</strong></span>
+      <span>Entropy: <strong id="entropyText">0 bits</strong></span>
+    </div>
+
+    <!-- Checklist Requirements -->
+    <div class="checklist">
+      <div class="check-item" id="checkLength">❌ At least 12 characters</div>
+      <div class="check-item" id="checkUpper">❌ Upper case letters (A-Z)</div>
+      <div class="check-item" id="checkLower">❌ Lower case letters (a-z)</div>
+      <div class="check-item" id="checkNumber">❌ Numbers (0-9)</div>
+      <div class="check-item" id="checkSymbol">❌ Special symbols (!@#$%^&*)</div>
+    </div>
+
+    <!-- Feedback & Suggestions -->
+    <div id="feedbackBox" class="feedback-box hidden">
+      <h4>Suggestions to Improve:</h4>
+      <ul id="suggestionsList"></ul>
+    </div>
+
+    <!-- Password Generator Section -->
+    <div class="generator-section">
+      <button id="generateBtn" class="btn-secondary">Suggest Strong Password</button>
+      <div id="suggestedContainer" class="suggested-container hidden">
+        <span id="suggestedPassword"></span>
+        <button id="copyBtn">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
